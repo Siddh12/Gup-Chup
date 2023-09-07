@@ -15,7 +15,7 @@
 
     </div>
     <div class="logincontent">
-        <div *ngIf="isLoggedIn; else loggedOut">
+        <div *ngIf="isLoggedIn">
             <h2>
                 lets Start
             </h2>
@@ -27,8 +27,8 @@
             </form>
         </div>
         <div>
-            <ng-template #loggedOut>
-                <div>
+           
+                <div *ngIf="otbtemplet">
                     <p>
                         OTP send SuccessFully On {{Email}}
                     </p>
@@ -40,7 +40,8 @@
                         <button [disabled]="otpform.invalid" >Submit</button>
                     </form>
                 </div>
-            </ng-template>
+            
         </div>
+        <div *ngIf="loder" class="loader" style="margin: auto;"></div>
     </div>
 </div>
