@@ -1,0 +1,46 @@
+<div class="body">
+    <div class="welcomenote">
+        <div>
+            <h1>
+                Welcome to <span class="logo">
+                    Gup-Chup
+                </span>
+            </h1>
+            <p>
+                <i>
+                    Welcome to our chat app - where connections are just a message away!
+                </i>
+            </p>
+        </div>
+
+    </div>
+    <div class="logincontent">
+        <div *ngIf="isLoggedIn; else loggedOut">
+            <h2>
+                lets Start
+            </h2>
+            <form #loginForm="ngForm" (ngSubmit)="getOtp(loginForm.value)">
+
+                <input type="email" required #name="ngModel" name="email" placeholder="Enter you Email" ngModel>
+                <br>
+                <button [disabled]="loginForm.invalid">Get Otp</button>
+            </form>
+        </div>
+        <div>
+            <ng-template #loggedOut>
+                <div>
+                    <p>
+                        OTP send SuccessFully On {{Email}}
+                    </p>
+                    <br>
+                    <form #otpform="ngForm" (ngSubmit)="varifiOTP(otpform.value)">
+
+                        <input name="otp" required #name="ngModel" placeholder="Enter your otp" ngModel>
+                        <br>
+                        <button [disabled]="otpform.invalid" >Submit</button>
+                    </form>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+</div>
