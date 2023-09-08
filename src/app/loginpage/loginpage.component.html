@@ -32,6 +32,8 @@
                     <p>
                         OTP send SuccessFully On {{Email}}
                     </p>
+                    <a (click)="changeEmail()"> Change Email</a>
+                    <br>
                     <br>
                     <form #otpform="ngForm" (ngSubmit)="varifiOTP(otpform.value)">
 
@@ -39,9 +41,16 @@
                         <br>
                         <button [disabled]="otpform.invalid" >Submit</button>
                     </form>
+                    <br>
+                    <a (click)="getOtp({email: Email})">Resend OTP ?</a>
                 </div>
             
         </div>
         <div *ngIf="loder" class="loader" style="margin: auto;"></div>
+        <div *ngIf="UnSuccessfully" class="error">
+            <h5>
+                UnSuccessfully!, please enter again
+            </h5>
+        </div>
     </div>
 </div>
