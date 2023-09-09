@@ -1,0 +1,24 @@
+<div class="body">
+    <h1>
+        Welcome to <span class="logo">
+            Gup-Chup
+        </span>
+    </h1>
+    <h2>
+        We're thrilled to have you here,
+    </h2>
+   <div class="formgrp" *ngIf="form">
+    <form #aboutuserform="ngForm" (ngSubmit)="getuserdetails(aboutuserform.value)">
+        <input type="text" required #name="ngModel" name="name" placeholder="name" ngModel>
+        <br>
+        <input type="text" required #name="ngModel" name="age" placeholder="Age" ngModel>
+        <br>
+        <input type="text" required #name="ngModel" name="gender" placeholder="Gender" ngModel>
+        <br>
+        <input type="text" required #name="ngModel" name="city" placeholder="City" ngModel>
+        <br>
+        <button [disabled]="aboutuserform.invalid">Submit</button>
+    </form>
+   </div>
+   <div *ngIf="loder" class="loader" style="margin: auto;"></div>
+</div>

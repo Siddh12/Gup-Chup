@@ -4,28 +4,13 @@
     height: 100vh;
     /* display: flex; */
 }
-.welcomenote, .logincontent{
-    width: 93%;
-    height: 48vh;
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    padding: 0px 0px 0px 20px;
-
-}
 h2, h1{
+    margin-top: 0%;
     color: rgb(240, 248, 255);
 }
 .logo{
     font-size: large;
     color: rgb(59, 59, 202);
-}
-i, p{
-    color: rgb(181, 181, 182);
-}
-input{
-    width: 300px;
-    height: 30px;
 }
 button{
     margin-top: 10px;
@@ -36,13 +21,3 @@ button{
     color: white;
     border: 1px solid white;
 }
-
-
-  
-  .error{
-    background-color: red;
-    color: rgb(255, 255, 255);
-    padding: 5px;
-  }
-  
-  

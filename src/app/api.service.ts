@@ -12,13 +12,36 @@ export class ApiService {
 
   apicall(object : any){
     
-    return {
-      
+    return { 
       getOTP : this.http.post(this.url + "emailvarification", object),
       varifyOTP : this.http.post(this.url + "otpVarification", object),
-      getUserDetails : this.http.get(this.url+ "getUserDetails/"+ object)
+      getUserDetails : this.http.get(this.url+ "getUserDetails/"+ object),
+      updateProfile : this.http.post(this.url+ "updateUserDetails", object)
     }
   }
 
+   
+  setToken(token : string){
+     localStorage.setItem("access_token", token)
+  }
 
+  isLoggedin(){
+    return localStorage.getItem("access_token") ? true : false;
+  }
+
+  removeToken(){
+    localStorage.removeItem("access_token")
+  }
+
+  sharedData: any ;
+
+  setSharedData(data: any) {
+    this.sharedData = data;
+    console.log(data);
+    
+  }
+
+  getSharedData() {
+    return this.sharedData;
+  }
 }

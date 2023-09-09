@@ -5,13 +5,19 @@ import { HttpClientModule  } from "@angular/common/http";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginpageComponent } from './loginpage/loginpage.component';
+import { LoginpageComponent } from './loginpage/LoginpageComponent';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
+import { MassagePageComponent } from './massage-page/massage-page.component';
+import { AllUserPageComponent } from './all-user-page/all-user-page.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginpageComponent
+    LoginpageComponent,
+    UpdateProfileComponent,
+    MassagePageComponent,
+    AllUserPageComponent
   ],
   imports: [
     BrowserModule,
