@@ -18,6 +18,12 @@ export class LoginpageComponent {
 
   constructor(private api: ApiService, private router: Router) { }
 
+  ngOnInit() {
+    if (localStorage.getItem("access_token")) {
+      this.router.navigateByUrl('massagepage')
+    }
+   
+  }
 
   grabId: any;
 
