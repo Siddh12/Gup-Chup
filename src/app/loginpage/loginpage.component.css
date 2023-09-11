@@ -1,10 +1,12 @@
-.body{
+.body {
     background-color: rgb(37, 37, 37);
     width: 100%;
     height: 100vh;
     /* display: flex; */
 }
-.welcomenote, .logincontent{
+
+.welcomenote,
+.logincontent {
     width: 93%;
     height: 48vh;
     display: flex;
@@ -13,36 +15,41 @@
     padding: 0px 0px 0px 20px;
 
 }
-h2, h1{
+
+h2,
+h1 {
     color: rgb(240, 248, 255);
 }
-.logo{
+
+.logo {
     font-size: large;
     color: rgb(59, 59, 202);
 }
-i, p{
+
+i,
+p {
     color: rgb(181, 181, 182);
 }
-input{
+
+input {
     width: 300px;
     height: 30px;
 }
-button{
+
+button {
     margin-top: 10px;
     width: 100px;
     height: 30px;
     border-radius: 5px;
-    background-color:rgb(59, 59, 202);
+    background-color: rgb(59, 59, 202);
     color: white;
     border: 1px solid white;
 }
 
 
-  
-  .error{
+
+.error {
     background-color: red;
     color: rgb(255, 255, 255);
     padding: 5px;
-  }
-  
-  
+}

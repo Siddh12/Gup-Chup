@@ -1,14 +1,43 @@
 <div class="body">
-    <h2>
-        Hi <span class="logo">{{userData?.name}}</span> Welcome to <span class="logo">
-             Gup-Chup
-         </span>
-     </h2>
-     <p>
-        We will roll out our frature soon ! Thank you for showing your intrest
-     </p>
-     
-     <button (click)="logout()">
-      Log out
-     </button>
+  <div class="header">
+    <h3 (click)="Showpopup()">Hi {{Name}}</h3>
+    <div>
+      <button class="notification-button">
+        <span class="notification-icon"> <img src="../../assets/notification.png" width="25px"> </span>
+      </button>
+      <button class="button"><img src="../../assets/addpepol.png" alt="" width="30px"></button>
+    </div>
+  </div>
+  <h4>Your Chat</h4>
+  <div class="popup-overlay" *ngIf="showPopup">
+    <div class="popup">
+      <div class="closebutton">
+        <button (click)="closePopup()" class="notNow">X</button>
+      </div>
+      <div class="container">
+        <div class="title">
+          <h2 class="popupheading">Hi {{Name}}</h2>
+        </div>
+      </div>
+      <br>
+      <div class="popupheading"> <h5>Name : {{inputString}}</h5> </div>
+      <br>
+      <div class="popupheading"> <h5>Email : {{userData.email}}</h5> </div>
+      <br>
+      <div class="popupheading"><h5>Age : {{userData.age}}</h5> </div>
+      <br>
+      <div class="popupheading"><h5>Gender: {{userData.gender}}</h5> </div>
+      <br>
+      <div class="popupheading"><h5>City: {{userData.city}}</h5> </div>
+      <br>
+      <button class="logoutButton" (click)="logout()">
+        Log out
+      </button>
+      <button class="logoutButton" (click)="UpdateProfile()">
+          Update Profile
+      </button>
+    </div>
+
+  </div>
+
 </div>

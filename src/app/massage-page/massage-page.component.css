@@ -1,23 +1,105 @@
-.body{
-    background-color: rgb(37, 37, 37);
+.popupheading{
+    position: relative;
+    background-color: rgb(155, 94, 213);
+    padding: 5px 20px;
+    color: aliceblue;
+  }
+
+h3{
+    padding: 5px 10px;
+    border: 1px solid blueviolet;
+}
+h5{
+    margin: 0%;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding:0.5px 10px;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.chat-container {
+    padding: 20px;
+}
+
+h4{
+    color: blueviolet;
+    margin-left: 12px;
+}
+
+.notification-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+}
+
+.popup-overlay {
+    animation-name: slowAppear;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100vh;
-    /* display: flex; */
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.60);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+ 
+  .popup {
+    background-color: #272727;
+    padding: 0px 0px 20px 0px;
+    border-radius: 5px;
+  }
+
+  .closebutton{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; /* Center vertically */
+    width: 300px;
+    height: 100px;
+    background-image: url('../../assets/chatbackground.jpg'); /* Replace 'your-image.jpg' with your image URL */
+    background-size: cover;
+    background-position: center;
 }
-h2, h1{
-    margin-top: 0%;
-    color: rgb(240, 248, 255);
+
+/* Styles for the title text */
+.title {
+    text-align: center;
+   
 }
-.logo{
-    font-size: large;
-    color: rgb(59, 59, 202);
-}
-button{
+  
+.logoutButton{
     margin-top: 10px;
+    margin-left: 20px;
     width: 100px;
     height: 30px;
     border-radius: 5px;
-    background-color:rgb(59, 59, 202);
+    background-color: rgb(59, 59, 202);
     color: white;
     border: 1px solid white;
 }

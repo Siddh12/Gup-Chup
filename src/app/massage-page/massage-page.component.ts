@@ -9,17 +9,38 @@ import { Router } from '@angular/router';
 export class MassagePageComponent {
   constructor(private api: ApiService, private router: Router) { }
   userData: any
-   ngOnInit(){
-     var id = localStorage.getItem("id");
-     this.api.apicall(id).getUserDetails.subscribe((data) => {
+  Name: string = ""
+  showPopup: boolean  = false;
+  inputString : string = ""
+  ngOnInit() {
+    var id = localStorage.getItem("id");
+    this.api.apicall(id).getUserDetails.subscribe((data) => {
       this.userData = data;
       console.log(this.userData);
+       this.inputString = this.userData.name;
+      var words = this.inputString.split(" "); 
+      console.log(words);
       
-   })
-}
+      this.Name = words[0]; 
+      console.log( this.Name);
+      
 
-logout(){
-  this.api.removeToken()
-  this.router.navigateByUrl('')
-}
+    })
+  }
+
+  Showpopup(){
+    this.showPopup = true
+  }
+
+  closePopup(){
+    this.showPopup = false
+  }
+
+  logout() {
+    this.api.removeToken()
+    this.router.navigateByUrl('')
+  }
+  UpdateProfile(){
+    this.router.navigateByUrl('updateProfile')
+  }
 }
