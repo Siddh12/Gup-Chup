@@ -1,11 +1,12 @@
 <div class="body">
   <div class="header">
-    <h3 (click)="Showpopup()">Hi {{Name}}</h3>
+    <img src= {{imgurl}} alt="image" width="50px">
+    <h2 (click)="Showpopup()">Hi {{Name}}</h2>
     <div>
       <button class="notification-button">
         <span class="notification-icon"> <img src="../../assets/notification.png" width="25px"> </span>
       </button>
-      <button class="button"><img src="../../assets/addpepol.png" alt="" width="30px"></button>
+      <button class="button" (click)="ShowAllUser()"><img src="../../assets/addpepol.png" alt="" width="30px"></button>
     </div>
   </div>
   <h4>Your Chat</h4>
@@ -39,5 +40,20 @@
     </div>
 
   </div>
-
+  <div class="user-list" >
+    <!-- Render user cards when userData is available -->
+    <div *ngFor="let user of userArray" class="user-card" (click)="msg(user._id)">
+        <!-- User card content -->
+        <div class="user-image">
+            <img src= {{imgurl}} alt="User Image" />
+        </div>
+        <div class="user-details">
+            <h3>{{ user.name}}</h3>
+            <div class="place">
+                {{ user.city}}
+                <i class="fa fa-map-marker"></i> <!-- Assuming you have a suitable icon library or image -->
+            </div>
+        </div>
+    </div>
+</div>
 </div>

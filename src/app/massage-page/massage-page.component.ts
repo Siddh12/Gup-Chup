@@ -12,6 +12,8 @@ export class MassagePageComponent {
   Name: string = ""
   showPopup: boolean  = false;
   inputString : string = ""
+  userArray : any = []; 
+  imgurl: string = "../../assets/profilepuctureimagemen.jpg";
   ngOnInit() {
     var id = localStorage.getItem("id");
     this.api.apicall(id).getUserDetails.subscribe((data) => {
@@ -20,14 +22,29 @@ export class MassagePageComponent {
        this.inputString = this.userData.name;
       var words = this.inputString.split(" "); 
       console.log(words);
-      
       this.Name = words[0]; 
       console.log( this.Name);
-      
-
     })
+    
+    this.api.apicall(id).getmsgforuser.subscribe((data) => {
+      this.userArray= data;
+      console.log(this.userArray);
+    }, (error)=>{
+      console.log(error);
+      
+    })
+
   }
 
+  msg(id : any){
+    localStorage.setItem("id_where_send_to_massege", id.toString())
+    localStorage.setItem("NavigetUrl", "massagepage")
+    this.router.navigateByUrl('chatpage')
+  }
+
+  ShowAllUser(){
+    this.router.navigateByUrl('alluser')
+  }
   Showpopup(){
     this.showPopup = true
   }

@@ -1,0 +1,19 @@
+
+<div class="header">
+    <button (click)="back()">
+        <
+    </button>
+    
+    {{userData?.name}}
+</div>
+<div class="chat-box">
+    <div *ngFor="let user of usermsg">
+        <div class="message user-one">{{user.fristusermsgmsg}}</div>
+        <div class="message user-two">{{user.Secondusermsgmsg}}</div>
+    </div>
+    <!-- Add more messages here -->
+</div>
+<form class="input-container" #massagebox="ngForm" (ngSubmit)="SendMsg(massagebox.value)">
+    <input required #name="ngModel" type="text" name="massege" class="message-input" placeholder="Type your message..." ngModel>
+    <button class="send-button" [disabled]="massagebox.invalid">Send</button>
+</form>

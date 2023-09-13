@@ -16,7 +16,10 @@ export class ApiService {
       getOTP : this.http.post(this.url + "emailvarification", object),
       varifyOTP : this.http.post(this.url + "otpVarification", object),
       getUserDetails : this.http.get(this.url+ "getUserDetails/"+ object),
-      updateProfile : this.http.post(this.url+ "updateUserDetails", object)
+      updateProfile : this.http.post(this.url+ "updateUserDetails", object),
+      getAllUser: this.http.get(this.url+ "alluser"),
+      sendMsg : this.http.post(this.url +"startmassege", object),
+      getmsgforuser : this.http.get(this.url+ "getmsgforuser/"+ object),
     }
   }
 

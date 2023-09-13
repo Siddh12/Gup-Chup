@@ -1,1 +1,30 @@
-<p>all-user-page works!</p>
+<div class="header">
+    <span>Add friends</span>
+    <button (click)="backtochat()"> Back to Chat</button>
+</div>
+<div class="search" [class.hidden]="isSearchHidden">
+    <input type="text" placeholder="Search..." [(ngModel)]="searchText" (input)="filterUsers()" />
+</div>
+
+<br>
+<br>
+
+<div class="user-list" *ngIf="userData.length > 0">
+    <!-- Render user cards when userData is available -->
+    <div *ngFor="let user of userData" class="user-card">
+        <!-- User card content -->
+        <div class="user-image">
+            <img src={{imgurl}} alt="User Image" />
+        </div>
+        <div class="user-details">
+            <h3>{{ user.name}}</h3>
+            <div class="place">
+                {{ user.city}}
+                <i class="fa fa-map-marker"></i> <!-- Assuming you have a suitable icon library or image -->
+            </div>
+        </div>
+        <div class="add-friend">
+            <button (click)="addFriend(user._id)">Massage</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+.header {
+    position: sticky;
+    top: 0;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    width: 94%;
+    z-index: 2; /* Ensure header is above the search input */
+  }
+  h1 {
+    margin: 0;
+    font-size: 24px;
+  }
+  .search {
+    position: sticky;
+    top: 55px; /* Adjust as needed based on the header's height */
+    background-color: #fff;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    z-index: 1; /* Ensure search input is below the header */
+  }
+  input {
+    width: 95%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+ 
+  .hidden {
+    top: -100px; 
+  }
+  
+
+  .fa-map-marker {
+    margin-left: 5px; /* Adjust as needed */
+  }
+  .add-friend {
+    text-align: right;
+  }
+  button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }

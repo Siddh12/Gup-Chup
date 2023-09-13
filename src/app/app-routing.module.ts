@@ -5,6 +5,7 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
 import {AuthgurdGuard} from './authgurd.guard';
 import {MassagePageComponent} from './massage-page/massage-page.component'
 import { AllUserPageComponent } from './all-user-page/all-user-page.component';
+import { ChatpageComponent } from './chatpage/chatpage.component';
 const routes: Routes = [
   {
     path: '',
@@ -24,6 +25,12 @@ const routes: Routes = [
   {
     path: "alluser",
     component: AllUserPageComponent,
+    canActivate:[AuthgurdGuard]
+  },
+
+  {
+    path: "chatpage",
+    component: ChatpageComponent,
     canActivate:[AuthgurdGuard]
   }
 

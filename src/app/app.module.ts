@@ -9,6 +9,7 @@ import { LoginpageComponent } from './loginpage/LoginpageComponent';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import { MassagePageComponent } from './massage-page/massage-page.component';
 import { AllUserPageComponent } from './all-user-page/all-user-page.component';
+import { ChatpageComponent } from './chatpage/chatpage.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { AllUserPageComponent } from './all-user-page/all-user-page.component';
     LoginpageComponent,
     UpdateProfileComponent,
     MassagePageComponent,
-    AllUserPageComponent
+    AllUserPageComponent,
+    ChatpageComponent
   ],
   imports: [
     BrowserModule,
